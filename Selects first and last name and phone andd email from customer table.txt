@@ -1,0 +1,13 @@
+/*
+CREATED By: Stan Guinn
+Created on 10/9/2020
+Description: This query selects the first, last name, email, and phone number fields
+ from the customers table and demonstrates four different ways to create an alias.
+*/
+SELECT
+  FirstName AS 'First Name',
+  LastName AS [Last Name],
+  Email AS EMAIL,
+  Phone CELL
+FROM
+customers

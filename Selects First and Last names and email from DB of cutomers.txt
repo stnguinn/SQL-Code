@@ -1,0 +1,10 @@
+CREATED By: Stan Guinn
+Created on 10/9/2020
+Description: This query selects the first, last names and e-mail from the customes table*/
+
+SELECT
+FirstName,
+LastName,
+Email
+FROM
+customers;
