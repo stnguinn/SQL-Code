@@ -1,0 +1,15 @@
+/*
+CREATED BY: Stanley Guinn
+CREATED ON: 10/9/2020
+DESCRIPTION: This query selects the first name, last name. and email
+ from the customer table, ordered by last name.
+*/
+
+SELECT  
+  FirstName AS 'First Name',
+  LastName AS 'Last Name',
+  Email AS 'EMAIL'
+FROM
+  customers
+ORDER BY
+  LastName ASC
