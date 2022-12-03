@@ -1,0 +1,28 @@
+# Finding Median in SQL
+
+
+
+SELECT AVG(middle_values) AS 'median' FROM (
+  SELECT t1.median_column AS 'middle_values' FROM
+    (
+      SELECT @row:=@row+1 as `row`, x.median_column
+      FROM median_table AS x, (SELECT @row:=0) AS r
+      WHERE 1
+      -- put some where clause here
+      ORDER BY x.median_column
+    ) AS t1,
+    (
+      SELECT COUNT(*) as 'count'
+      FROM median_table x
+      WHERE 1
+      -- put same where clause here
+    ) AS t2
+    -- the following condition will return 1 record for odd number sets, or 2 records for even number sets.
+    WHERE t1.row >= t2.count/2 and t1.row <= ((t2.count/2) +1)) AS t3;
+
+To use this, follow these 3 easy steps:
+
+    Replace "median_table" (2 occurrences) in the above code with the name of your table
+    Replace "median_column" (3 occurrences) with the column name you'd like to find a median for
+    If you have a WHERE condition, replace "WHERE 1" (2 occurrences) with your where condition
+
